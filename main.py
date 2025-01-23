@@ -1,132 +1,28 @@
-import preguntas
+import json
+import random
 class Trivial:
-    preguntas_historia: dict
-    preguntas_geografía: dict
-    preguntas_arte_literatura: dict
-    preguntas_ciencia_naturaleza: dict
-    preguntas_deportes: dict
-    preguntas_cine: dict
     clase_preguntas: list
-
-    def __init__(self, preguntas_historia, preguntas_geografía, preguntas_arte_literatura, preguntas_ciencia_naturaleza, preguntas_deportes, preguntas_cine, clase_preguntas):
-        self.preguntas_historia = preguntas_historia
-        self.preguntas_geografía = preguntas_geografía
-        self.preguntas_arte_literatura = preguntas_arte_literatura
-        self.preguntas_ciencia_naturaleza = preguntas_ciencia_naturaleza
-        self.preguntas_deportes = preguntas_deportes
-        self.preguntas_cine = preguntas_cine
-        self.clase_preguntas = ["Historia", "Geografía", "Arte y Literatura", "Ciencia y Naturaleza", "Deportes", "Cine"]
+    preguntas: dict
     
-    def pregunta_nueva(self):
-        self.preguntas_historia = {
-                        "¿En qué año comenzó la primera guerra mundial?": "1914",
-                        "¿Qué tratado puso fin a la Primera Guerra Mundial?": "Tratado de Versalles",
-                        "¿En qué año comenzó la Revolución Francesa?": "1789",
-                        "¿Qué civilización antigua construyó Machu Picchu?": "Inca",
-                        "¿Quién fue el primer presidente de los Estados Unidos?": "George Washington",
-                        "¿Cuál fue el primer país en llegar al espacio?": "Unión Soviética",
-                        "¿Quién descubrió América en 1492?": "Cristóbal Colón",
-                        "¿Quién pintó la Capilla Sixtina?": "Miguel Ángel",
-                        "¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?": "1776",
-                        "¿En qué año comenzó la Segunda Guerra Mundial?": "1939"
-                    }
+    def __init__(self):
+        #Volcamos el json en el constructor
+        with open("preguntas.json", "r", encoding='utf-8') as archivo_preguntas:
+            self.preguntas = json.load(archivo_preguntas)
+        print(self.preguntas)
 
-        self.preguntas_geografía = {
-                        "¿Cúal es la capital de Moldavia?": "Chisinau",
-                        "¿De que país es capital La Valeta": "Chipre",
-                        "¿Cúal es el nombre del río más largo del mundo?": "Amazonas",
-                        "¿Cúal es el nombre de la montaña más alta del mundo?": "Everest",
-                        "¿Cúal es el nombre del océano más grande de la Tierra?": "Pacífico",
-                        "¿Cuál es el país más extenso del mundo?": "Rusia",
-                        "¿Cuál es el país con mayor población del mundo?": "India",
-                        "¿Cúal es el nombre del desierto más grande del mundo?": "Sahara",
-                        "¿Cuántos continentes hay en la Tierra?": "7",
-                        "¿Cúal es el nombre del río más largo de España?": "Ebro"
-                    }
-        self.preguntas_cine = {
-                        "¿Cuál es la primera película de Pixar?": "Toy Story",
-                        "¿En qué año se estrenó “Titanic”?": "1997",
-                        "¿Quién es el director de la trilogía “El Señor de los Anillos”?": "Peter Jackson",
-                        "¿Qué película ganó el Oscar a Mejor Película en 2019?": "Green Book",
-                        "¿Quién dirigió “Pulp Fiction”?": "Quentin Tarantino",
-                        "¿En qué año se estrenó “Star Wars: Una nueva esperanza?”": "1977",
-                        "¿Qué actor interpretó a Hannibal Lecter en “El silencio de los corderos”?": "Anthony Hopkins",
-                        "¿En qué ciudad se desarrolla la película “Casablanca”?": "Casablanca",
-                        "¿Quién dirigió películas como “Tiburón”, “E.T.” e “Indiana Jones”?": "Steven Spielberg",
-                        "¿En qué ciudad se entregan los Premios Óscar?": "Los Angeles"
-                    }
-        
-        self.preguntas_ciencia_naturaleza = {
-                        "¿Cómo se llama el proceso por el cual las plantas convierten la luz solar en energía química?": "Fotosíntesis",
-                        "Cómo se llama el gas más abundante en la atmósfera terrestre?": "Nitrógeno",
-                        "¿Cómo se llama el proceso por el cual el agua pasa de estado líquido a gaseoso?": "Evaporación",
-                        "¿Cómo se llama la capa de la atmósfera terrestre donde se encuentra la capa de ozono?": "Estratosfera",
-                        "¿Cómo se llama la rama de la biología que estudia la herencia y la variación de los caracteres biológicos?": "Genética",
-                        "¿Cómo se llama la unidad de medida de la fuerza en el Sistema Internacional de Unidades?": "Newton",
-                        "¿Cómo se llama la ciencia que estudia los seres vivos, incluyendo su origen, evolución, estructura, función y relaciones con el medio ambiente?": "Biología",
-                        "¿Cómo se llama la adaptación de algunos animales para pasar el invierno en un estado de inactividad, con un metabolismo muy lento?": "Hibernación",
-                        "¿Cómo se llama la parte del átomo con carga positiva que se encuentra en el núcleo?": "Protón",
-                        "¿Cómo se llama el conjunto de todos los seres vivos que habitan la Tierra, junto con los ecosistemas en los que viven?": "Biosfera"
-                    }
-        
-        self.preguntas_deportes = {
-                        "¿Cúal es el deporte más popular del mundo?": "Fútbol",
-                        "¿Cuántos jugadores componen un equipo de baloncesto en la cancha?": "5",
-                        "¿Donde se celebraron los primeros Juegos Olímpicos modernos?": "Atenas" ,
-                        "¿En qué deporte se utiliza un 'birdie?'": "Bádminton",
-                        "¿Cuántos títulos de Grand Slam ha ganado Novak Djokovic":"24",
-                        "¿Quién es conocido como “El Rey del Fútbol”?": "Pelé",
-                        "¿Qué país ha ganado más Copas del Mundo de fútbol?": "Brasil",
-                        "¿Cuántos segundos son el récord mundial de los 100 metros lisos?": "9,58",
-                        "¿Qué país ha ganado más medallas en los Juegos Olímpicos de Invierno?": "Noruega",
-                        "¿Número de jugadores que hay en un equipo de hockey sobre césped?": "11"
-
-                    }
-        
-        self.preguntas_arte_literatura = {
-                        "¿Quién escribió “Cien años de soledad”?": "Gabriel García Márquez",
-                        "¿Cuál es la obra más famosa de Miguel de Cervantes?": "Don Quijote de la Mancha",
-                        "¿Quién escribió “Orgullo y prejuicio”?": "Jane Austen",
-                        "¿Quién es el autor de “1984”?": "George Orwell",
-                        "¿Nombre del poeta chileno ganó el Premio Nobel de Literatura en 1971?": "Pablo Neruda",
-                        "¿Cuál es la obra más conocida de Franz Kafka?": "La metamorfosis",
-                        "¿Cuál es el nombre del mago protagonista de la serie de libros escrita por J.K. Rowling?": "Harry Potter",
-                        "¿Qué autor español escribió “La casa de Bernarda Alba”? (nombre completo)": "Federico García Lorca",
-                        "¿Cuál es la obra más famosa de Charles Dickens?": "Oliver Twist",
-                        "¿Qué poeta chileno ganó el Premio Nobel de Literatura en 1971?": "Pablo Neruda"
-                    }
+        #Hacemos una lista con las clases de preguntas
+        self.clase_preguntas = list(self.preguntas.keys())
         
     def formula_pregunta(self):
-        import random
         aleatorio = random.randint(0, 5)
         print("Te ha tocado pregunta sobre:", self.clase_preguntas[aleatorio])
 
-        if self.clase_preguntas[aleatorio] == "Historia":
-            claves = list(self.preguntas_historia.keys())
-            clave_aleatoria = random.choice(claves)
-            print(clave_aleatoria)
-        elif self.clase_preguntas[aleatorio] == "Geografía":
-            claves = list(self.preguntas_geografía.keys())
-            clave_aleatoria = random.choice(claves)
-            print(clave_aleatoria)
-        elif self.clase_preguntas[aleatorio] == "Arte y Literatura":
-            claves = list(self.preguntas_arte_literatura.keys())
-            clave_aleatoria = random.choice(claves)
-            print(clave_aleatoria)
-        elif self.clase_preguntas[aleatorio] == "Ciencia y Naturaleza":
-            claves = list(self.preguntas_ciencia_naturaleza.keys())
-            clave_aleatoria = random.choice(claves)
-            print(clave_aleatoria)
-        elif self.clase_preguntas[aleatorio] == "Deportes":
-            claves = list(self.preguntas_deportes.keys())
-            clave_aleatoria = random.choice(claves)
-            print(clave_aleatoria)
-        elif self.clase_preguntas[aleatorio] == "Cine":
-            claves = list(self.preguntas_cine.keys())
-            clave_aleatoria = random.choice(claves)
-            print(clave_aleatoria)
+        
+
+
+            
 
         
 
-trivial = Trivial(preguntas_historia, preguntas_geografía, preguntas_arte_literatura, preguntas_ciencia_naturaleza, preguntas_deportes, preguntas_cine, clase_preguntas)
-trivial.formula_pregunta()
+trivial = Trivial()
+#trivial.formula_pregunta()
