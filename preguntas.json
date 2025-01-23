@@ -13,7 +13,7 @@
     },
     "Geografia": {
         "¿Cúal es la capital de Moldavia?": "Chisinau",
-        "¿De que país es capital La Valeta": "Chipre",
+        "¿De que país es capital La Valeta": "Malta",
         "¿Cúal es el nombre del río más largo del mundo?": "Amazonas",
         "¿Cúal es el nombre de la montaña más alta del mundo?": "Everest",
         "¿Cúal es el nombre del océano más grande de la Tierra?": "Pacífico",
@@ -36,16 +36,16 @@
         "¿En qué ciudad se entregan los Premios Óscar?": "Los Angeles"
     },
     "Ciencia y Naturaleza": {
-        "¿Cuál es la primera película de Pixar?": "Toy Story",
-        "¿En qué año se estrenó “Titanic”?": "1997",
-        "¿Quién es el director de la trilogía “El Señor de los Anillos”?": "Peter Jackson",
-        "¿Qué película ganó el Oscar a Mejor Película en 2019?": "Green Book",
-        "¿Quién dirigió “Pulp Fiction”?": "Quentin Tarantino",
-        "¿En qué año se estrenó “Star Wars: Una nueva esperanza?”": "1977",
-        "¿Qué actor interpretó a Hannibal Lecter en “El silencio de los corderos”?": "Anthony Hopkins",
-        "¿En qué ciudad se desarrolla la película “Casablanca”?": "Casablanca",
-        "¿Quién dirigió películas como “Tiburón”, “E.T.” e “Indiana Jones”?": "Steven Spielberg",
-        "¿En qué ciudad se entregan los Premios Óscar?": "Los Angeles"
+        "¿Cómo se llama el proceso por el cual las plantas convierten la luz solar en energía química?": "Fotosíntesis",
+        "Cómo se llama el gas más abundante en la atmósfera terrestre?": "Nitrógeno",
+        "¿Cómo se llama el proceso por el cual el agua pasa de estado líquido a gaseoso?": "Evaporación",
+        "¿Cómo se llama la capa de la atmósfera terrestre donde se encuentra la capa de ozono?": "Estratosfera",
+        "¿Cómo se llama la rama de la biología que estudia la herencia y la variación de los caracteres biológicos?": "Genética",
+        "¿Cómo se llama la unidad de medida de la fuerza en el Sistema Internacional de Unidades?": "Newton",
+        "¿Cómo se llama la ciencia que estudia los seres vivos, incluyendo su origen, evolución, estructura, función y relaciones con el medio ambiente?": "Biología",
+        "¿Cómo se llama la adaptación de algunos animales para pasar el invierno en un estado de inactividad, con un metabolismo muy lento?": "Hibernación",
+        "¿Cómo se llama la parte del átomo con carga positiva que se encuentra en el núcleo?": "Protón",
+        "¿Cómo se llama el conjunto de todos los seres vivos que habitan la Tierra, junto con los ecosistemas en los que viven?": "Biosfera"
     },
     "Deportes": {
         "¿Cúal es el deporte más popular del mundo?": "Fútbol",

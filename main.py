@@ -8,21 +8,40 @@ class Trivial:
         #Volcamos el json en el constructor
         with open("preguntas.json", "r", encoding='utf-8') as archivo_preguntas:
             self.preguntas = json.load(archivo_preguntas)
-        print(self.preguntas)
+        
 
         #Hacemos una lista con las clases de preguntas
         self.clase_preguntas = list(self.preguntas.keys())
         
     def formula_pregunta(self):
-        aleatorio = random.randint(0, 5)
-        print("Te ha tocado pregunta sobre:", self.clase_preguntas[aleatorio])
+        try:
+            #Generamos un número aleatorio
+            aleatorio = random.randint(0, 5)
+            #Utilizamos dicho número para elegir aleatoriamente una categoría de pregunta
+            clase = self.clase_preguntas[aleatorio]
+            print("Te ha tocado pregunta sobre:", clase)
+                
+            #Pasamos el diccionario a lista para poder mostrar la primera pregunta
+            pregunta = list(self.preguntas[clase].keys())[0]
+            print(pregunta)
 
+            #Pedimos al jugador la respuesta a la pregunta
+            respuesta = input()
+
+            #Comparamos si la respuesta introducida por el usuario es correcta
+            if respuesta.lower() == self.preguntas[clase][pregunta].lower():
+                print("Correcto")
+            else:
+                print("Incorrecto")
+
+            #Una vez mostrada la pregunta la eliminamos del diccionario para que no se repitan las preguntas
+            del self.preguntas[clase][pregunta]
+        except IndexError:
+            print("Nos hemos quedado sin preguntas seguiremos mejorando el juego, Lo siento :(")
         
-
 
             
 
-        
-
 trivial = Trivial()
-#trivial.formula_pregunta()
+for i in range(5):
+    trivial.formula_pregunta()
