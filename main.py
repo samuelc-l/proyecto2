@@ -31,6 +31,8 @@ class Trivial:
             #Comparamos si la respuesta introducida por el usuario es correcta
             if respuesta.lower() == self.preguntas[clase][pregunta].lower():
                 print("Correcto")
+                #Eliminamos la clase ya que el usuario ha respondido correctamente, por tanto ha completado la categoría
+                self.clase_preguntas.remove(clase)
             else:
                 print("Incorrecto")
 
@@ -39,9 +41,17 @@ class Trivial:
         except IndexError:
             print("Nos hemos quedado sin preguntas seguiremos mejorando el juego, Lo siento :(")
         
+    def menú_inicio(self):
+        print(f"------------------------------")
+        print(f"¡Bienvenido a Trivial Pursuit!")
+        print(f"------------------------------")
 
+        print(f"Selecciona el modo de juego:")
+        print(f"1. Modo solitario")
+        print(f"2. Dos jugadores")
+        modo_juego = int(input())
             
-
+    
 trivial = Trivial()
-for i in range(5):
+for i in range(50):
     trivial.formula_pregunta()

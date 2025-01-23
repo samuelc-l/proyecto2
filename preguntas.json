@@ -11,7 +11,7 @@
         "¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?": "1776",
         "¿En qué año comenzó la Segunda Guerra Mundial?": "1939"
     },
-    "Geografia": {
+    "Geografía": {
         "¿Cúal es la capital de Moldavia?": "Chisinau",
         "¿De que país es capital La Valeta": "Malta",
         "¿Cúal es el nombre del río más largo del mundo?": "Amazonas",
@@ -23,7 +23,7 @@
         "¿Cuántos continentes hay en la Tierra?": "7",
         "¿Cúal es el nombre del río más largo de España?": "Ebro"
     },
-    "Cine": {
+    "Entretenimiento": {
         "¿Cuál es la primera película de Pixar?": "Toy Story",
         "¿En qué año se estrenó “Titanic”?": "1997",
         "¿Quién es el director de la trilogía “El Señor de los Anillos”?": "Peter Jackson",
@@ -35,7 +35,7 @@
         "¿Quién dirigió películas como “Tiburón”, “E.T.” e “Indiana Jones”?": "Steven Spielberg",
         "¿En qué ciudad se entregan los Premios Óscar?": "Los Angeles"
     },
-    "Ciencia y Naturaleza": {
+    "Ciencias y Naturaleza": {
         "¿Cómo se llama el proceso por el cual las plantas convierten la luz solar en energía química?": "Fotosíntesis",
         "Cómo se llama el gas más abundante en la atmósfera terrestre?": "Nitrógeno",
         "¿Cómo se llama el proceso por el cual el agua pasa de estado líquido a gaseoso?": "Evaporación",
