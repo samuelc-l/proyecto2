@@ -1,5 +1,6 @@
 import json
 import random
+import pregunta
 class Trivial:
     clase_preguntas: list
     preguntas: dict
@@ -50,7 +51,8 @@ class Trivial:
         print(f"1. Modo solitario")
         print(f"2. Dos jugadores")
         modo_juego = int(input())
-            
+
+
     
 trivial = Trivial()
 for i in range(50):
